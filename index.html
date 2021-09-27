@@ -1,0 +1,223 @@
+<html>
+  <title>Numeratik</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img
+          src="logo.svg"
+          width="50"
+          height="50"
+          class="d-inline-block align-top"
+          alt="RocketMath"
+        />
+      </a>
+      <ul class="navbar-brand navbar-nav">
+        <li class="nav-item">Numeratik</li>
+      </ul>
+    </nav>
+
+    <div id="main" class="container">
+      <div class="container-fluid">
+        <div class="card footspace">
+          <h5 class="card-header">Operaciones</h5>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-6 footspace">
+                <section>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                      <input type="checkbox" id="adds" checked="true"/>
+                      <label for="adds">Sumas</label>
+                    </div>
+                    <div class="col-sm-12 col-md-12">
+                      <input type="checkbox" id="subs" />
+                      <label for="subs">Restas</label>
+                    </div>
+                    <div class="col-sm-12 col-md-12">
+                      <input type="checkbox" id="product" />
+                      <label for="product">Multiplicaciones</label>
+                    </div>
+                  </div>
+                </section>
+              </div>
+
+              <div class="col-xs-12 col-sm-12 col-md-6">
+                <section>
+                  <div class="row form-group">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="firstMin">Cantidad de operaciones:</label>
+                      <input class="form-control" id="qty" value="20" />
+                    </div>
+
+                    <div class="col-sm-12 col-md-12">
+                      <input type="checkbox" id="negatives" value="false" />
+                      <label for="negatives"
+                        >Permitir respuestas negativas</label
+                      >
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group footspace">
+          <div class="col-sm-12 col-md-6 footspace">
+            <div class="card">
+              <h5 class="card-header">Primer operador</h5>
+              <div class="card-body">
+                <section>
+                  <div class="row">
+                    <div class="col-12">
+                      <label for="firstMin">M&iacute;nimo:</label>
+                      <select
+                        class="form-control"
+                        id="firstMin"
+                        onchange="buildOperations();"
+                      >
+                        <option value="0">0</option>
+                        <option value="9" selected="selected">9</option>
+                        <option value="19">19</option>
+                        <option value="99">99</option>
+                        <option value="999">999</option>
+                        <option value="9999">9999</option>
+                        <option value="99999">99999</option>
+                        <option value="999999">999999</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <label for="firstMax">M&aacute;ximo:</label>
+                      <select
+                        class="form-control"
+                        id="firstMax"
+                        onchange="buildOperations();"
+                      >
+                        <option value="1">1</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="100" selected="selected">100</option>
+                        <option value="1000">1000</option>
+                        <option value="10000">10000</option>
+                        <option value="100000">100000</option>
+                        <option value="1000000">1000000</option>
+                      </select>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6 footspace">
+            <section>
+              <div class="card">
+                <h5 class="card-header">Segundo operador</h5>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="secondMin">M&iacute;nimo:</label>
+                      <select
+                        class="form-control"
+                        id="secondMin"
+                        onchange="buildOperations();"
+                      >
+                        <option value="0">0</option>
+                        <option value="9" selected="selected">9</option>
+                        <option value="19">19</option>
+                        <option value="99">99</option>
+                        <option value="999">999</option>
+                        <option value="9999">9999</option>
+                        <option value="99999">99999</option>
+                        <option value="999999">999999</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <label for="secondMax">M&aacute;ximo:</label>
+                      <select
+                        class="form-control"
+                        id="secondMax"
+                        onchange="buildOperations();"
+                      >
+                        <option value="1">1</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="100" selected="selected">100</option>
+                        <option value="1000">1000</option>
+                        <option value="10000">10000</option>
+                        <option value="100000">100000</option>
+                        <option value="1000000">1000000</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div class="col-md-4"></div>
+          <div class="col-sm-12 col-md-4">
+            <section>
+              <div class="row footspace">
+                <div class="col d-flex justify-content-center">
+                  <button
+                    class="form-control btn btn-outline-success"
+                    type="button"
+                    onclick="buildOperations()"
+                  >
+                    Generar
+                  </button>
+                </div>
+              </div>
+              <div class="row footspace">
+                <div class="col d-flex justify-content-center">
+                  <button
+                    class="form-control btn btn-secondary"
+                    type="button"
+                    onclick="print()"
+                  >
+                    Imprimir
+                  </button>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+
+      </div>
+    </div>
+    <div class="card footspace">
+        <div id="myProblemsToSolve" class="card-body">
+          <p class="card-text d-flex justify-content-center">
+            Tus ejercicios aparecer&aacute;n en esta &aacute;rea
+          </p>
+        </div>
+      </div>
+  </body>
+
+  <script src="operations.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="print.css" media="print" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"
+  ></script>
+</html>

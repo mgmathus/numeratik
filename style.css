@@ -1,0 +1,23 @@
+@media print, screen {
+  .operation {
+    text-align: right;
+    font-size: 22;
+  }
+}
+
+@media screen {
+  table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100 px;
+    float: left;
+  }
+
+  .footspace {
+    margin-bottom: 10px;
+  }
+}
