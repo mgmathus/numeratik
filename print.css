@@ -1,0 +1,28 @@
+@media print {
+  header,
+  footer,
+  nav,
+  aside {
+    display: none;
+  }
+
+  .container {
+    display: none;
+  }
+
+  .btn {
+    display: none !important;
+  }
+
+  .card {
+
+    border: 0px !important;
+    border-radius:0px !important;
+
+}
+
+  #myProblemsToSolve {
+    display: block;
+    font-size: 26px;
+  }
+}
