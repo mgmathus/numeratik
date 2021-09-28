@@ -58,8 +58,10 @@ function buildOperations() {
             let so = this.getRandomInteger(secondMin + 1, secondMax + 1);
 
             if (!data.allow_negatives_answers_subs && nextOperator === '-' && fo < so) {
+                console.log("swap");
+                let temp = fo;
                 fo = so;
-                so = fo;
+                so = temp;
             }
 
             let currentOperation = {
