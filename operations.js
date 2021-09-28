@@ -40,7 +40,7 @@ function buildOperations() {
         return false;
     }
 
-    this.data.allow_negatives_answers_subs = document.getElementById("negatives").value;
+    this.data.allow_negatives_answers_subs = document.getElementById("negatives").checked;
 
     if (data.qty < 1) {
         alert("Cantidad de operaciones no permitida");
