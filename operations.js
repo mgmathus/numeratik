@@ -57,8 +57,9 @@ function buildOperations() {
             let fo = this.getRandomInteger(firstMin + 1, firstMax + 1);
             let so = this.getRandomInteger(secondMin + 1, secondMax + 1);
 
-            if (!data.allow_negatives_answers_subs && nextOperator == '-' && fo < so) {
-                [fo, so] = [so, fo];
+            if (!data.allow_negatives_answers_subs && nextOperator === '-' && fo < so) {
+                fo = so;
+                so = fo;
             }
 
             let currentOperation = {
